@@ -5,3 +5,8 @@ void minisystem()
 {
     printf("minisystem\n");
 }
+void jj(){
+
+	printf("bluehill welcome\n");	
+}
+

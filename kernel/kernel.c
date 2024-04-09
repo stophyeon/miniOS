@@ -23,6 +23,9 @@ int main() {
         if (strcmp(input,"minisystem") == 0){
             minisystem();
         }
+	if(strcmp(input,"jj")==0){
+		jj(); 
+	} 
         else system(input);
     }
 
