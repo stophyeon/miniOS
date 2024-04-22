@@ -23,10 +23,14 @@ int main() {
         if (strcmp(input,"minisystem") == 0){
             minisystem();
         }
-	    if(strcmp(input,"jjh")==0){
-		    jjh(); 
+	    if(strcmp(input,"jj")==0){
+		    jj(); 
 	    }
         if(strcmp(input,"ipc")==0){ipc();} 
+        if (strcmp(input,"pi") == 0 )
+        {
+            cal();
+        }
         else system(input);
     }
 

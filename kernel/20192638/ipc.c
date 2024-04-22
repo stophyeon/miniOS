@@ -1,3 +1,8 @@
+
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
 #define BUFFER_SIZE 25
 #define READ_END 0
 #define WRITE_END 1
@@ -6,13 +11,14 @@ int ipc(void){
     char write_msg[BUFFER_SIZE] = "Greetings\n";
     char read_msg[BUFFER_SIZE];
     pid_t pid;
+    int fd[2];
     if(pipe(fd)==-1){
-        fprintf(err,"Pipe Failed");
+        fprintf(stderr,"Pipe Failed");
         return 1;
     }
     pid = fork();
     if(pid<0){
-        fprintf(err,"Error occurred");
+        fprintf(stderr,"Error occurred");
         return 1;
     }
     if(pid>0){
