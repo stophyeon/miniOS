@@ -3,8 +3,15 @@
 #include <string.h>
 #include <readline/readline.h>
 #include <readline/history.h>
-
 #include "system.h"
+#define MAX_PROCESS 5
+
+typedef struct {
+    int process_id;
+    int arrival_time;
+    int burst_time;
+    int remaining_time;
+} Process;
 void print_minios(char* str);
 
 int main() {
@@ -30,6 +37,21 @@ int main() {
         if (strcmp(input,"pi") == 0 )
         {
             cal();
+        }
+        if (strcmp(input, "process") ==0 )
+        {
+            Process processes[MAX_PROCESS] = {
+            {1, 0, 8, 0},
+            {2, 1, 4, 0},
+            {3, 2, 9, 0},
+            };
+
+            int quantum = 2;
+
+            printf("라운드 로빈 스케줄링을 시작합니다.\n");
+             roundRobinScheduling(processes, MAX_PROCESS, quantum);
+
+            return 0;
         }
         else system(input);
     }
